@@ -4,12 +4,11 @@
  *
  *
  */
-int print_cent(va_list ap)
+int print_cent(va_list ap __attribute__((unused)))
 {
-	char c;
+	char percent = '%';
 
-	c = (char)va_arg(ap, int);
-	_putchar(c);
+	_putchar(percent);
 
 	return (1);
 }

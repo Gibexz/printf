@@ -6,6 +6,6 @@ int main (void)
 	char on = 'b';
 	char two[] = ", this is great.";
 
-	_printf("It is letters %s the %clphabet %s\n", one, on, two);
+	_printf("It is letters %s the %clphab%%et %s\n", one, on, two);
 	return (0);
 }
