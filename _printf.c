@@ -78,6 +78,11 @@ int _printf(const char *format, ...)
 			/* continue printing after with the new index is [i + 1] */
 			_putchar(format[i]);
 			count++;
+
+			if(format[i + 1] == '%')
+				i = i + 2;
+			else
+				i++;
 		}
 		i++;
 	}
