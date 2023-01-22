@@ -14,7 +14,7 @@ typedef struct print
  *
  *
  */
-int (*check_specifier(char *format))(valist);
+int (*check_specifier(const char *format))(va_list)
 {
 	int i;
 
@@ -27,7 +27,7 @@ int (*check_specifier(char *format))(valist);
 
 	for (i = 0; i < 4; i++)
 	{
-		if (*p[i].t) == *format)
+		if ((*p[i].t) == *format)
 			break;
 	}
 	return (p[i].funct);
@@ -41,8 +41,9 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0;/* i for looping and count for the number of
 			    characters printed */
+	int return_count = 0; /* Value returned when check_specifier is call */
 	va_list ap;
-	//void (*valist_funct_ptr)(va_list) = &check_specifier;
+	int (*valist_funct_ptr)(va_list); /* funtion pointer */
 
 	va_start (ap, format);
 
@@ -51,16 +52,34 @@ int _printf(const char *format, ...)
 
 	while (format [i])
 	{
-		for (i = 0; format[i] != '%'; i++)
+		if (format[i] != '%')
 		{
 			_putchar(format[i]);
 			count = count + 1;
+			i++;
+			continue;
 		}
 
 		if (format[i] == '%')
 		{
-			valist_funct_ptr(format[i + 1]);
+			/* funtion ptr assignment to checkspecifier */
+			valist_funct_ptr = check_specifier(&format[i + 1]);
+			if (valist_funct_ptr != NULL)
+			{
+				return_count = valist_funct_ptr(ap);
+				count = count + return_count;
+				i = i + 2; /* New index point i.e after the specifier characters */
+				continue;
+			}
+			/* what happens if the checkspecifier returns NULL */
+			if (valist_funct_ptr == NULL) 
+				break;
+
+			/* continue printing after with the new index is [i + 1] */
+			_putchar(format[i]);
+			count++;
 		}
+		i++;
 	}
 	va_end(ap);
 	return (count);
