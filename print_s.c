@@ -11,6 +11,8 @@ int print_s(va_list ap)
 	int count = 0;
 
 	string = va_arg(ap, char*);
+	if (string == NULL)
+		string = "(null)";
 	
 	for (i = 0; string[i] != '\0'; i++)
 	{
