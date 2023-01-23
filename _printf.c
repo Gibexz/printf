@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int (*valist_funct_ptr)(va_list); /* funtion pointer */
 
-	va_start(ap, format)
+	va_start(ap, format);
 	if (format == NULL)/* check if format is a NULL pointer */
 		return (-1);
 	while (format[i])
