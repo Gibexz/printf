@@ -25,5 +25,6 @@ int print_s(va_list ap);
 int print_cent(va_list ap);
 int print_int(va_list ap);
 int print_deci(va_list ap);
+int print_base2(va_list ap);
 
 #endif
