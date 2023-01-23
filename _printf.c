@@ -1,18 +1,9 @@
 #include "main.h"
 
 /**
- *
- *
- */
-typedef struct print
-{
-	char *t;
-	int (*funct)(va_list);
-}print_struct;
-
-/**
- *
- *
+ * check_specifier - function pointer for check_spec
+ * @format: characters after % i.e. c, s and %.
+ * Return: function to run.
  */
 int (*check_specifier(const char *format))(va_list)
 {
@@ -31,26 +22,25 @@ int (*check_specifier(const char *format))(va_list)
 			break;
 	}
 	return (p[i].funct);
+	return (NULL);
 }
 
 /**
- *
- *
+ * _printf - printf funtion for specifiers
+ * @format: unknown variable types.
+ * Return: count.
  */
 int _printf(const char *format, ...)
 {
-	int i, count = 0;/* i for looping and count for the number of
-			    characters printed */
-	int return_count = 0; /* Value returned when check_specifier is call */
+	int i, count = 0;/* i for looping and count =  characters printed */
+	int ret_count = 0; /* Value returned when check_specifier is call */
 	va_list ap;
 	int (*valist_funct_ptr)(va_list); /* funtion pointer */
 
-	va_start (ap, format);
-
+	va_start(ap, format)
 	if (format == NULL)/* check if format is a NULL pointer */
 		return (-1);
-
-	while (format [i])
+	while (format[i])
 	{
 		if (format[i] != '%')
 		{
@@ -59,30 +49,26 @@ int _printf(const char *format, ...)
 			i++;
 			continue;
 		}
-
 		if (format[i] == '%')
-		{
-			/* funtion ptr assignment to checkspecifier */
+		{	/* funtion ptr assignment to checkspecifier */
 			valist_funct_ptr = check_specifier(&format[i + 1]);
 			if (valist_funct_ptr != NULL)
 			{
-				return_count = valist_funct_ptr(ap);
-				count = count + return_count;
+				ret_count = valist_funct_ptr(ap);
+				count = count + ret_count;
 				i = i + 2; /* New index point i.e after the specifier characters */
 				continue;
 			}
-			/* what happens if the checkspecifier returns NULL */
-			if (valist_funct_ptr == NULL) 
+			if (valist_funct_ptr == NULL)/* if the checkspecifier returns NULL */
 				break;
-
-			/* continue printing after with the new index is [i + 1] */
-			_putchar(format[i]);
+			_putchar(format[i]);/* continue printing with the new index [i + 1] */
 			count++;
-
-			if(format[i + 1] == '%')
+			if (format[i + 1] == '%')
 				i = i + 2;
 			else
 				i++;
+			_putchar(format[i]);
+			count++;
 		}
 		i++;
 	}

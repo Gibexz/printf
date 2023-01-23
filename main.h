@@ -6,6 +6,18 @@
 #include "main.h"
 #include <stdarg.h>
 
+/**
+ * struct print - created stuct troe print_struct
+ * @t: pointer to character speccifer
+ * @funct: function pointer to check_spec code for the
+ * respective character
+ */
+typedef struct print
+{
+	char *t;
+	int (*funct)(va_list);
+} print_struct;
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list ap);

@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
+ * print_s - function to print a string
+ * @ap: valist ap
  *
- *
+ * Return: count - number of bytes printed
  */
 int print_s(va_list ap)
 {
@@ -13,7 +15,7 @@ int print_s(va_list ap)
 	string = va_arg(ap, char*);
 	if (string == NULL)
 		string = "(null)";
-	
+
 	for (i = 0; string[i] != '\0'; i++)
 	{
 		_putchar(string[i]);
