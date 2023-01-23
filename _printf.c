@@ -22,7 +22,6 @@ int (*check_specifier(const char *format))(va_list)
 			break;
 	}
 	return (p[i].funct);
-	return (NULL);
 }
 
 /**
@@ -67,8 +66,6 @@ int _printf(const char *format, ...)
 				i = i + 2;
 			else
 				i++;
-			_putchar(format[i]);
-			count++;
 		}
 		i++;
 	}
