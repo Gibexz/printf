@@ -2,10 +2,8 @@
 
 int main (void)
 {
-	char one[]  = "a to z";
-	char on = 'b';
-	char two[] = ", this is great.";
+	int one = 35645;
 
-	_printf("It is letters %s the %clphab%% %s\n", one, on, two);
+	_printf("It is letters %i \n", one);
 	return (0);
 }

@@ -9,10 +9,12 @@ int (*check_specifier(const char *format))(va_list)
 {
 	int i;
 
-	print_struct p[4] = {
+	print_struct p[6] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"%", print_cent},
+		{"i", print_int},
+		{"d", print_doub},
 		{NULL, NULL}
 	};
 
