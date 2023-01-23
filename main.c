@@ -2,8 +2,8 @@
 
 int main (void)
 {
-	int one = 35645;
+	int one = 356.45;
 
-	_printf("It is letters %i \n", one);
+	_printf("It is letters %d \n", one);
 	return (0);
 }

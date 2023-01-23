@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_int - funtion to print integer
+ * print_deci - funtion to print integer (decimal)
  * @ap: va_list variable
  *
  * Return: count
  */
-int print_int(va_list ap)
+int print_deci(va_list ap)
 {
 	int digit[10]; /* array of numbers obtained from loop 1 */
 	int i, count, sum_digit, num;
@@ -32,6 +32,7 @@ int print_int(va_list ap)
 			digit[i] = digit[i] * -1;
 		}
 	}
+
 
 	for (i = 0; i < 10; i++)
 	{
