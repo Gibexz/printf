@@ -18,7 +18,7 @@ int print_int_u(va_list ap)
 	m = 1000000000;/* 10^9 */
 
 	for (i = 0; i < 10; i++)
-	{ 
+	{
 		digit[i] = (num / m) % 10;
 		m /= 10;
 	}

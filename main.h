@@ -31,6 +31,8 @@ int print_base10_u(va_list ap);
 int print_base16_x(va_list ap);
 int print_base16_X(va_list ap);
 int print_int_u(va_list ap);
+int print_hex_x(va_list ap);
+int print_hex_X(va_list ap);
 
 
 #endif

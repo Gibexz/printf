@@ -2,8 +2,8 @@
 
 int main (void)
 {
-	unsigned int one = 356;
+	unsigned int one = 2429;
 
-	_printf("It is %o letters \n", one)
+	_printf("It is %x letters \n", one);
 	return (0);
 }
