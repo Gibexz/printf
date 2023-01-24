@@ -28,7 +28,7 @@ int print_base8_o(va_list ap)
 		sum_digit += digit[i];
 		if (sum_digit != 0 || i == 11)
 		{
-			_putchar(digit[i]);
+			_putchar(digit[i] + '0');
 			count++;
 		}
 	}

@@ -15,6 +15,7 @@ int print_int_u(va_list ap)
 	num = va_arg(ap, unsigned int);
 	count = 0;
 	sum_digit = 0;
+	m = 1000000000;/* 10^9 */
 
 	for (i = 0; i < 10; i++)
 	{ 
@@ -25,9 +26,9 @@ int print_int_u(va_list ap)
 	for (i = 0; i < 10; i++)
 	{
 		sum_digit += digit[i];
-		if (sum_digit != 0 || i == 9)
+		if (sum_digit || i == 9)
 		{
-			_putchar(digit[i]);
+			_putchar(digit[i] + '0');
 			count++;
 		}
 	}

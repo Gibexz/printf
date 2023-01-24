@@ -4,6 +4,6 @@ int main (void)
 {
 	unsigned int one = 356;
 
-	_printf("It is letters %u \n", one);
+	_printf("It is %o letters \n", one)
 	return (0);
 }
