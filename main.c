@@ -2,8 +2,6 @@
 
 int main (void)
 {
-	unsigned int one = 2429;
-
-	_printf("It is %x letters \n", one);
+	_printf("%S\n", "Best\nSchool");
 	return (0);
 }
