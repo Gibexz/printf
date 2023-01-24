@@ -30,5 +30,7 @@ int print_base8_o(va_list ap);
 int print_base10_u(va_list ap);
 int print_base16_x(va_list ap);
 int print_base16_X(va_list ap);
+int print_int_u(va_list ap);
+
 
 #endif
