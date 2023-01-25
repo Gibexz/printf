@@ -34,5 +34,7 @@ int print_int_u(va_list ap);
 int print_hex_x(va_list ap);
 int print_hex_X(va_list ap);
 int print_str_S(va_list ap);
+int hex(int num);
+int hex_print(char c);
 
 #endif

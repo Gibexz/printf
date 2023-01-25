@@ -2,6 +2,9 @@
 
 int main (void)
 {
-	_printf("%S\n", "Best\nSchool");
+
+	int t = 243;
+
+	_printf("%x\n", t);
 	return (0);
 }
