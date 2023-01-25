@@ -9,7 +9,7 @@ int (*check_specifier(const char *format))(va_list)
 {
 	int i;
 
-	print_struct p[13] = {
+	print_struct p[14] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"%", print_cent},
@@ -22,10 +22,11 @@ int (*check_specifier(const char *format))(va_list)
 		{"X", print_hex_X},
 		{"S", print_str_S},
 		{"p", print_p},
+		{"R", print_R},
 		{NULL, NULL}
 	};
 
-	for (i = 0; i < 12; i++)
+	for (i = 0; i < 13; i++)
 	{
 		if ((*p[i].t) == *format)
 			break;
