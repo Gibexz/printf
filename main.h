@@ -38,5 +38,6 @@ int hex(int num);
 int hex_print(char c);
 int print_p(va_list p);
 int print_R(va_list R);
+int print_r(va_list r);
 
 #endif
